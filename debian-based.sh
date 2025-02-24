@@ -194,6 +194,10 @@ $sudo apt-get update
 
 $sudo bash -c "DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER=$WAZUH_MANAGER apt-get install -y wazuh-agent=4.9.2-1"
 
+# Config wazuh agent to work with osquery
+
+sed -i "63s|<disabled>yes</disabled>|<disabled>no</disabled>|" /var/ossec/etc/ossec.conf
+
 # Starting wazuh agent
 
 $sudo systemctl daemon-reload

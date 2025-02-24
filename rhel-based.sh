@@ -192,6 +192,10 @@ protect=1
 
 $sudo bash -c "WAZUH_MANAGER=$WAZUH_MANAGER yum install -y wazuh-agent-4.9.2-1"
 
+# Config wazuh agent to work with osquery
+
+sed -i "63s|<disabled>yes</disabled>|<disabled>no</disabled>|" /var/ossec/etc/ossec.conf
+
 # Starting wazuh agent
 
 $sudo systemctl daemon-reload
