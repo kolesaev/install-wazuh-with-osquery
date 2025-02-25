@@ -7,6 +7,10 @@
 if [[ -z $1 ]]
 then
 
+    echo "Enter Wazuh-server ip or hostname"
+    echo "Usage example:"
+    echo ""
+    echo "    bash rhel-based.sh wazuh-server.example.com"
     exit 1
 
 fi
@@ -175,7 +179,7 @@ echo "{
 
 $sudo systemctl daemon-reload
 $sudo systemctl enable osqueryd
-$sudo systemctl start osqueryd
+$sudo systemctl restart osqueryd
 
 # Install wazuh agent
 
@@ -200,7 +204,7 @@ sed -i "63s|<disabled>yes</disabled>|<disabled>no</disabled>|" /var/ossec/etc/os
 
 $sudo systemctl daemon-reload
 $sudo systemctl enable wazuh-agent
-$sudo systemctl start wazuh-agent
+$sudo systemctl restart wazuh-agent
 
 # Disable repo sources to prevent updating
 
