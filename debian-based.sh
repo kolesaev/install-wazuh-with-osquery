@@ -16,6 +16,7 @@ then
 fi
 
 WAZUH_MANAGER=$1
+arch=$2
 
 # Install osquery
 
