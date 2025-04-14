@@ -210,5 +210,5 @@ $sudo systemctl restart wazuh-agent
 
 $sudo sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/wazuh.repo
 
-# Save bash history imidiately
+# Save bash history immediately
 echo 'export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"' | sudo tee /etc/profile.d/update-bash-history.sh > /dev/null

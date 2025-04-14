@@ -216,5 +216,5 @@ $sudo sed -i "s/^deb/#deb/" /etc/apt/sources.list.d/osquery.list
 
 $sudo apt-get update
 
-# Save bash history imidiately
+# Save bash history immediately
 echo 'export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"' | sudo tee /etc/profile.d/update-bash-history.sh > /dev/null
