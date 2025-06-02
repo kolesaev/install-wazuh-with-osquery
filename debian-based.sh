@@ -201,7 +201,7 @@ $sudo bash -c "DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER=$WAZUH_MANAGER apt-g
 
 # Config wazuh agent to work with osquery
 
-sed -i "63s|<disabled>yes</disabled>|<disabled>no</disabled>|" /var/ossec/etc/ossec.conf
+$sudo sed -i "63s|<disabled>yes</disabled>|<disabled>no</disabled>|" /var/ossec/etc/ossec.conf
 
 # Starting wazuh agent
 
